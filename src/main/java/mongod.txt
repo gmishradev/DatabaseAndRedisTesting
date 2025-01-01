@@ -1,0 +1,37 @@
+mongod --version
+db version v6.0.20
+Build Info: {
+    "version": "6.0.20",
+    "gitVersion": "ef4efd469fb0c5626c629c4f0f21398c9b5dd08f",
+    "modules": [],
+    "allocator": "system",
+    "environment": {
+        "distarch": "aarch64",
+        "target_arch": "aarch64"
+    }
+}
+
+brew services stop mongodb@6.0.20
+
+ps aux | grep mongod
+
+kill <PID>
+
+Summary of Commands:
+-----------------------
+Check if MongoDB is running:
+ps aux | grep mongod
+brew services list
+-------------------------
+Start MongoDB:
+brew services start mongodb@<version>
+mongod
+sudo launchctl load /Library/LaunchDaemons/org.mongodb.mongod.plist
+
+-------------
+Stop MongoDB:
+brew services stop mongodb@<version>
+kill <PID>
+sudo launchctl unload /Library/LaunchDaemons/org.mongodb.mongod.plist
+
+
